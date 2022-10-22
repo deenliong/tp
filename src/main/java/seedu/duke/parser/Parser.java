@@ -24,7 +24,7 @@ public class Parser {
         String[] keywords = userInput.split("\\s+");
         switch (keywords[0]) {
         case (SearchModuleCommand.COMMAND_WORD):
-            return searchCommand(userInput);
+            return (new SearchModuleCommand(userInput));
         case (GetModuleCommand.COMMAND_WORD):
             return getAddDeleteCommand(keywords, new GetModuleCommand(keywords));
         case (AddModuleCommand.COMMAND_WORD):
@@ -93,20 +93,29 @@ public class Parser {
 
     public static boolean isValidModuleCode(String moduleCode) {
         return isModuleCode(moduleCode) || isPartialModuleCode(moduleCode);
+
+        // module code is valid if it exists in the module list
+        // List<Module> moduleList = Module.getAll();
+        // for (Module module : moduleList) {
+        //     if (module.moduleCode.equalsIgnoreCase(moduleCode)) {
+        //         return true;
+        //     }
+        // }
+        // return false;
     }
 
     public static boolean isValidModuleFaculty(String moduleFaculty) {
         return isModuleFaculty(moduleFaculty) || isPartialModuleFaculty(moduleFaculty);
     }
 
-    private static boolean containsValidModuleCode(String[] keywords) {
-        for (int i = 1; i < keywords.length; i++) {
-            if (isValidModuleCode(keywords[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
+    // private static boolean containsValidModuleCode(String[] keywords) {
+    //     for (int i = 1; i < keywords.length; i++) {
+    //         if (isValidModuleCode(keywords[i])) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 
     private static boolean isValidTwoWordCommand(String[] keywords) {
         return isTwoWordsCommand(keywords) && isValidModuleCode(keywords[1]);
@@ -117,9 +126,9 @@ public class Parser {
         return semesterInput > 0 && semesterInput <= 4;
     }
 
-    public static Command searchCommand(String userInput) {
-        return new SearchModuleCommand(userInput);
-    }
+    // public static Command searchCommand(String userInput) {
+    //     return new SearchModuleCommand(userInput);
+    // }
 
     /**
      * Checks if the user entered a valid search or add or delete command in the
