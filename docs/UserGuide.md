@@ -243,7 +243,8 @@ CG2271 Real-Time Operating Systems
 To get full details of the module, type 'get <module code>'
 -------------------------------------------------------------------------------- 
 ```
-
+> Note:
+> - The list of modules can get very long for a generic search
 Possible Error:
 1. Module code does not have a match
    * YAMOM will return an empty list of modules
@@ -264,17 +265,14 @@ Possible Error:
     -------- ------------------------------------------------------------------------
     ```
 3. The search input did not include EITHER the /code or /title field.
-    ```   
-   search /sem 1 /level 2
-   --------------------------------------------------------------------------------
-    Error! 	Search require at least a code field or a title field, in the format of:
+   * YAMOM will prompt for the user to include either the /code or /title field
+   ```   
+    search /sem 1 /level 2
+    --------------------------------------------------------------------------------
+    Error!  Search require at least a code field or a title field, in the format of:
     search (/code [MODULE_CODE] | /title [KEYWORD]) </level [MODULE_LEVEL]> </sem [MODULE_SEMESTER]>
     --------------------------------------------------------------------------------
-
     ```
-   
-> Note:
-> - The list of modules can get very long for a generic search
 
 ### Changing semester to plan: `semester`
 
@@ -427,6 +425,15 @@ select /module CS2040 /type lecture /code 2
 --------------------------------------
 Slot selected successfully
 --------------------------------------
+```
+
+Possible Error:
+1. The module code does not exist in your list of selected modules for that semester
+```
+select /module CS2040 /type lecture /code 2
+--------------------------------------------------------------------------------
+Slot selection unsuccessful
+--------------------------------------------------------------------------------
 ```
 
 ### Creating an NUSMod Link: `export`

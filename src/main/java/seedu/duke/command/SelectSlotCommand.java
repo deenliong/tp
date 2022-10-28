@@ -22,6 +22,9 @@ public class SelectSlotCommand extends Command {
 
     public static final String MISSING_PARAMS_KEY_OR_VALUE = "You might have missed out the Module Code, Lesson Type or"
             + " Class No.";
+
+    public static final String SUCCESSFUL_SELECTION= "Slot selected successfully";
+    public static final String UNSUCCESSFUL_SELECTION = "Slot selection unsuccessful";
     private Map<String, String> params;
     private String moduleCode;
     private LessonType lessonType;
@@ -52,9 +55,9 @@ public class SelectSlotCommand extends Command {
             }
         }
         if (successful) {
-            ui.addMessage("Slot selected successfully");
+            ui.addMessage(SUCCESSFUL_SELECTION);
         } else {
-            ui.addMessage("Slot selection unsuccessful");
+            ui.addMessage(UNSUCCESSFUL_SELECTION);
         }
         ui.displayUi();
     }
