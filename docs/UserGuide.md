@@ -263,6 +263,15 @@ Possible Error:
     search (/code [MODULE_CODE] | /title [KEYWORD]) </level [MODULE_LEVEL]> </sem [MODULE_SEMESTER]>
     -------- ------------------------------------------------------------------------
     ```
+3. The search input did not include EITHER the /code or /title field.
+    ```   
+   search /sem 1 /level 2
+   --------------------------------------------------------------------------------
+    Error! 	Search require at least a code field or a title field, in the format of:
+    search (/code [MODULE_CODE] | /title [KEYWORD]) </level [MODULE_LEVEL]> </sem [MODULE_SEMESTER]>
+    --------------------------------------------------------------------------------
+
+    ```
    
 > Note:
 > - The list of modules can get very long for a generic search
