@@ -11,20 +11,20 @@ Enter "help" to get started!
 Sem [1] >> --------------------------------------------------------------------------------
 Here are all the commands available in YAMOM!
 
-add	: add a module into YAMOM timetable.
-delete	: remove a module from YAMOM timetable.
-list	: List out all the selected modules and lesson slots.
-bye	: Exit YAMOM!
-export	: Generates an NUSMod Link to be exported to the browser.
-get	: Show all details of a module.
-help	: List out all commands and  their respective usages in YAMOM
-import	: Imports a timetable  from an NUSMod timetable sharing link
-search	: List out all modules that contains a search term
+add 	: add a module into YAMOM timetable.
+delete 	: remove a module from YAMOM timetable.
+list 	: List out all the selected modules and lesson slots.
+bye 	: Exit YAMOM!
+export 	: Generates an NUSMod Link to be exported to the browser.
+get 	: Show all details of a module.
+help 	: List out all commands and  their respective usages in YAMOM
+import 	: Imports a timetable  from an NUSMod timetable sharing link
+search 	: List out all modules that contains a search term
 	 * the search term can either be module code or a keyword in module title.
 	 * MODULE_LEVEL and MODULE_SEMESTER should be a single digit number
-semester	: Select another semester to plan and organize timetable
-select	: Select a module slot
-view	: Display current user timetable
+semester: Select another semester to plan and organize timetable
+select 	: Select a module slot
+view 	: Display current user timetable
 
 Usage :
 	add [MODULE_CODE]
