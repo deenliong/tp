@@ -23,6 +23,8 @@ public class SelectSemesterCommand extends Command {
 
     public static final String SUBSYSTEM_NAME = "SelectSemesterCommand";
 
+    protected static final String DESCRIPTION_DELIMITER = ": ";
+
     public SelectSemesterCommand(String[] input) throws YamomException {
         super(input);
         Parser.selectSemesterCommandError(input, ERROR_WRONG_FORMAT);
